@@ -110,34 +110,34 @@ graph TD
     A([Начало]) --> B[/Ввести: x/]
     B --> C[/Ввести: a, b, c, d/]
     C --> D{a >= 0}
-    D -- Да --> E{a_ost = a % x}
+    D -- Да --> E[a_ost = a % x]
     D -- Нет -->F1{a % x != 0}
-    F1 -- Да  --> F{"a_ost = (-(a / x) + 1) * x + a"}
+    F1 -- Да  --> F["a_ost = (-(a / x) + 1) * x + a"]
     F1 -- Нет --> G
     E --> G{b>=0}
     F --> G
-    G -- Да --> H{b_ost = b % x}
+    G -- Да --> H[b_ost = b % x]
     G -- Нет --> I1{b % x != 0}
-    I1 -- Да --> I{"b_ost = (-(b / x) + 1) * x + b"}
+    I1 -- Да --> I["b_ost = (-(b / x) + 1) * x + b"]
     I1 -- Нет --> J
     H --> J{c>=0}
     I --> J
-    J -- Да --> K{c_ost = c % x}
+    J -- Да --> K[c_ost = c % x]
     J -- Нет --> L1{c % x != 0}
-    L1 -- Да -->L{"c_ost = (-(c / x) + 1) * x + c"}
+    L1 -- Да -->L["c_ost = (-(c / x) + 1) * x + c"]
     L1 -- Нет --> M
     K --> M{d>=0}
     L --> M
-    M -- Да --> N{d_ost = d % x}
+    M -- Да --> N[d_ost = d % x]
     M -- Нет --> O1{d % x != 0}
-    O1 -- Да --> O{"d_ost = (-(d / x) + 1) * x + d"}
+    O1 -- Да --> O["d_ost = (-(d / x) + 1) * x + d"]
     O1 -- Нет --> P
-    N --> P{min_ost = 0}
+    N --> P[min_ost = 0]
     O --> P
-    P --> Q{"min_ost = Math.min(min_ost, a_ost)"}
-    Q --> R{"min_ost = Math.min(min_ost, b_ost)"}
-    R --> S{"min_ost = Math.min(min_ost, c_ost)"}
-    S --> T{"min_ost = Math.min(min_ost, d_ost)"}
+    P --> Q["min_ost = Math.min(min_ost, a_ost)"]
+    Q --> R["min_ost = Math.min(min_ost, b_ost)"]
+    R --> S["min_ost = Math.min(min_ost, c_ost)"]
+    S --> T["min_ost = Math.min(min_ost, d_ost)"]
     T --> U{min_ost == a_ost}
     U -- Да --> V[/Вывод: a/]
     U -- Нет --> W{min_ost == b_ost}
